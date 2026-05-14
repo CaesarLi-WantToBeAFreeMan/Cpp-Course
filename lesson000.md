@@ -4,149 +4,159 @@
 
 # Teaching Date: Friday, May 15, 2026
 
+---
+
 ## `Python` vs `C++`
 
-|              field              |     `Python`      |          `C++`           |
-| :-----------------------------: | :---------------: | :----------------------: |
-|            **block**            |    identation     |           `{}`           |
-|            **type**             |      dynamic      |          static          |
-| **changing type of a variable** |        can        |          cannot          |
-|         **end of line**         |        ``         |           `;`            |
-|           **comment**           |  `#` or `''''''`  |      `//` or `/**/`      |
-|          **execution**          | execution dirctly | compiling then execution |
+|           field            |     `Python`     |         `C++`          |
+| :------------------------: | :--------------: | :--------------------: |
+|         **block**          |   indentation    |          `{}`          |
+|      **type system**       |  dynamic typing  |     static typing      |
+| **changing variable type** |     allowed      |    **not** allowed     |
+|      **end of line**       |   not required   |          `;`           |
+|        **comment**         | `#` or `''' '''` |    `//` or `/* */`     |
+|       **execution**        | executed dirctly | compiled then executed |
+
+---
 
 ## Text Editor + Compiler (or IDE)
 
-1. text editor: a tool that writes code.
+1. text editor: a tool used to write code.
 2. compiler: turn code into a real program.
-3. `IDE`: a big app that includes many tools together.
+3. `IDE`: a large application that includes that includes many development tools together.
 
-### Text Editor
+---
+
+### Text Editors
 
 1. `vim`/`neovim`
     - fast keyboard-based editor
     - has multiple modes
-    - can greatly increase typing speed
     - highly customizable
     - advanced tool for programmers
 
-    > [!info]
+    > [!NOTE]
     > I use this as my daily editor.
 
-    > [!important]
-    > not recommended for beginners.
+    > [!IMPORTANT]
+    > Not recommended for beginners.
 
 2. `microsoft visual studio code`(`VS Code`)(**recommended**)
     - excellent for beginners
     - very popular
-    - has many useful extensions
+    - many useful extensions
     - almost industry standard for frontend development
 
-    > [!info]
-    > use this for now
+    > [!NOTE]
+    > Recommended for students.
 
 3. `emacs`
     - powerful editor
-    - highly customizable like `vim`/`neovim`
+    - highly customizable
     - famous among experienced programmers
 
-    > [!info]
-    > never use it
+    > [!NOTE]
+    > I don't use it
 
 4. `sublime text`
     - lightweight and fast
     - simpler user interface (`UI`)
-    - good for small project
+    - good for small projects
 
-    > [!info]
-    > never use it
+    > [!NOTE]
+    > I don't use it
 
 5. `notepad++`
     - simple editor for `microsoft windows`
     - easy to install
     - lightweight
 
-### Compiler
+---
+
+### Compilers
 
 1. `g++`
     - most common `C++` compiler
     - free
-    - good for programmers
+    - good for beginners
     - used in many schools and competitions
 
-    > [!info]
-    > often use it
+    > [!NOTE]
+    > often used in competitive programming.
 
 2. `clang`
     - modern compiler
     - very good error messages
-    - default compiler on `apple macos`
+    - **default** compiler on `apple macos`
 
-    > [!info]
-    > use it as LSP server
+    > [!NOTE]
+    > I use `clangd` as my C++ language LSP server.
 
-### Integrated Develop Environment (`IDE`)
+---
 
-An `IDE` often includes `text editor`, `compiler`, `debugger`, `pretty UI`, `project tools`.
+### Integrated Development Environment (`IDE`)
+
+An `IDE` often includes `text editor`, `compiler`, `debugger`, `pretty graphical UI`, `project tools`.
 
 1. `microsoft visual studio`
     - very powerful IDE
-    - common professional C++ development on `microsoft windows`
-    - large download sizes
+    - common for professional C++ development on `microsoft windows`
+    - large download size
     - many built-in features
 
-    > [!info]
-    > I used it to build a win32 app.
+    > [!NOTE]
+    > I used it to build a win32 application.
 
 2. `Dev-C++`
     - old but simple C++ IDE
     - still used in some schools and competitions
     - easy for beginners
 
+---
+
 ## Versions of `C++`
 
-| version | released year |                                   description                                   |
-| :-----: | :-----------: | :-----------------------------------------------------------------------------: |
-| `c++98` |     1998      |                             first official version                              |
-| `c++03` |     2003      |                               small improvements                                |
-| `c++11` |     2011      | first version of modern `C++`, allowed version for `CSP-J`/`CSP-S`/`NOIP`/`NOI` |
-| `c++14` |     2014      |                                add some features                                |
-| `c++17` |     2017      |                very popular version, allowed version for `USACO`                |
-| `c++20` |     2020      |                                add some features                                |
-| `c++23` |     2023      |                                add some features                                |
-| `c++26` |     2026      |                                add some features                                |
+| version | released year |           description           |
+| :-----: | :-----------: | :-----------------------------: |
+| `c++98` |     1998      |     first official version      |
+| `c++03` |     2003      |       small improvements        |
+| `c++11` |     2011      | first mordern version of `C++`  |
+| `c++14` |     2014      |     introduced new features     |
+| `c++17` |     2017      |      very popular version       |
+| `c++20` |     2020      | introduced many modern features |
+| `c++23` |     2023      |      latest major version       |
+| `c++26` |     2026      |        upcoming version         |
+
+---
 
 ## `Hello World` Program
 
 ```cpp
-    //include iostream library
-    //think of using a input/output tool
     #include <iostream>
-    //use std namespace, offen use in competititonal programs
-    //but do not use in indutrial programs
     //using namespace std;
 
-    //start point of a program
     int main(){
-        //output Hello World on the screen, and move cursor to the next line
         std::cout << "Hello World" << std::endl;
-        //end the program
-        //0 means program operate successfully
         return 0;
     }
 ```
+
+---
 
 ## Input
 
 ```cpp
     #include <iostream>
+    #include <string>
     using namespace std;
 
     int main(){
-        cout << "your name:\t";
         //declare a string variable
         string name;
-        //input to name variable
+
+        cout << "your name:\t";
+
+        //input into variable
         cin >> name;
 
         cout << "your name is: " << name << endl;
@@ -154,24 +164,30 @@ An `IDE` often includes `text editor`, `compiler`, `debugger`, `pretty UI`, `pro
     }
 ```
 
-### Comperison Between `Python` And `C++` In `I/O`
+---
+
+### Comparison Between `Python` And `C++` In `I/O`
 
 | `Python`  |     `C++`      |
 | :-------: | :------------: |
 | `input()` | `std::cin >>`  |
 | `print()` | `std::cout <<` |
 
+---
+
 ## Variables
 
 ### Types
 
-|     field     | `Python` |               `C++`                |
-| :-----------: | :------: | :--------------------------------: |
-|  **integer**  |  `int`   |    `int`, `long long` and so on    |
-|  **decimal**  | `float`  |    `float`, `double` and so on     |
-|  **boolean**  |  `bool`  |               `bool`               |
-| **character** |    no    |               `char`               |
-|  **string**   |  `str`   | `std::string`, `char []`, `char *` |
+|     field     |     `Python`     |               `C++`                |
+| :-----------: | :--------------: | :--------------------------------: |
+|  **integer**  |      `int`       |    `int`, `long long` and so on    |
+|  **decimal**  |     `float`      |    `float`, `double` and so on     |
+|  **boolean**  |      `bool`      |               `bool`               |
+| **character** | no separate type |               `char`               |
+|  **string**   |      `str`       | `std::string`, `char []`, `char *` |
+
+---
 
 ### Advantages of `Static Typing`
 
@@ -179,9 +195,64 @@ An `IDE` often includes `text editor`, `compiler`, `debugger`, `pretty UI`, `pro
 2. safer
 3. catch mistakes earlier
 
+---
+
+### Declaration
+
+tells the compiler to create a variable
+uninitialized variables may contain garbage values
+
+`Python`:
+
+```python
+    n: int
+```
+
+`C++`:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main(){
+        int n;
+        return 0;
+    }
+```
+
+---
+
+### Assignment
+
+gives a value to a variable
+
+`Python`:
+
+```python
+    n = 1
+```
+
+`C++`:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main(){
+        int n;
+        n = 1;
+        int a = 2;
+        return 0;
+    }
+```
+
+---
+
 ## Conditional Statements
 
-Conditional statements allow programs to make decisions.
+allow programs to make decisions.
+
+---
 
 ### `if`
 
@@ -223,8 +294,8 @@ Conditional statements allow programs to make decisions.
             cout << "very good\n";//allowed, but not recommended
         else if(score >= 80)cout << "good\n";//allowd, but not recommended
         else if(score >= 70){
-            cout << "not bad" << endl;//endl is better than \n
-                                    //endl does extra operations like clear cache
+            cout << "not bad" << endl;//endl flushes buffer
+                                    //endl is slower than \n
         }else if(score >= 60){
             cout << "pass" << endl;
         }else if(score >= 0){
@@ -236,19 +307,20 @@ Conditional statements allow programs to make decisions.
     }
 ```
 
+---
+
 ### `switch`
 
-`switch` is a multi-if statement.
-`switch` is useful when a variable has multiple possible values
+useful for checking many fixed values for one variable
 
-> [!important]
-> you cannot validate a string in switch
+> [!IMPORTANT]
+> switch usually works with integer-like types
 
 `Python`:
 
 ```python
     score = int(input("enter score:"))
-    score /= 10
+    score //= 10
 
     match score:
         case 10:
@@ -261,7 +333,7 @@ Conditional statements allow programs to make decisions.
             print("not bad")
         case 6:
             print("pass")
-        case 5, case 4, case 3, case 2, case 1, case 0:
+        case 5 | 4 | 3 | 2 | 1 | 0:
             print("failure")
         case _:
             print("invalid score")
@@ -281,7 +353,7 @@ Conditional statements allow programs to make decisions.
         switch(score / 10){
             case 10:
                 cout << "excellent" << endl;
-                break;//break the statement
+                break;
             case 9:
                 cout << "very good" << endl;
                 break;
@@ -310,20 +382,202 @@ Conditional statements allow programs to make decisions.
     }
 ```
 
+---
+
 ### Logical Operators
 
-| operator |                 meaning                  | `Python` | `C++`  |
-| :------: | :--------------------------------------: | :------: | :----: |
-|   `==`   |                eequal to                 |   `==`   |  `==`  |
-|   `!=`   |               not equal to               |   `!=`   |  `!=`  |
-|   `>`    |               greater than               |   `>`    |  `>`   |
-|   `<`    |                less than                 |   `<`    |  `<`   |
-|   `>=`   |         greater than or equal to         |   `>=`   |  `>=`  |
-|   `<=`   |          less than or equal to           |  `<= `   |  `<=`  |
-| **AND**  |      two conditions must be matched      |  `and`   |  `&&`  |
-|  **OR**  | either of two conditions must be matched |   `or`   | `\|\|` |
-| **NOT**  |           reverse a condition            |  `not`   |  `!`   |
+| operator |                meaning                | `Python` | `C++`  |
+| :------: | :-----------------------------------: | :------: | :----: |
+|   `==`   |               equal to                |   `==`   |  `==`  |
+|   `!=`   |             not equal to              |   `!=`   |  `!=`  |
+|   `>`    |             greater than              |   `>`    |  `>`   |
+|   `<`    |               less than               |   `<`    |  `<`   |
+|   `>=`   |       greater than or equal to        |   `>=`   |  `>=`  |
+|   `<=`   |         less than or equal to         |  `<= `   |  `<=`  |
+| **AND**  |    both conditions must be `true`     |  `and`   |  `&&`  |
+|  **OR**  | at least one condition must be `true` |   `or`   | `\|\|` |
+| **NOT**  |          reverse a condition          |  `not`   |  `!`   |
+
+---
 
 ## Loop Statements
 
 `loop statements` are used to repeat code.
+
+---
+
+### `for` Loop
+
+useful for repeating code a specific number of times
+
+> [!NOTE]
+> most commonly used loop
+
+`Python`
+
+```python
+    for i in range(5):
+        print(i)
+```
+
+`C++`
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main(){
+        for(int i = 0; i < 5; i++){//(initialization; condition; update)
+            cout << i << endl;
+        }
+        return 0;
+    }
+```
+
+---
+
+### `while` Loop
+
+useful for repeating code while a condition is `true`
+
+> [!NOTE]
+> I use it sometimes (but slightly less frequently than for loops).
+
+`Python`:
+
+```python
+    i = 0
+    while i < 5:
+        print i
+        i += 1
+```
+
+`C++`:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main(){
+        int i = 0;//initialization
+        while(i < 5){//condition
+            cout << i << endl;
+            i++;//i = i + 1, i += 1, update
+            //cout << i++ << endl;  another write way
+        }
+    }
+```
+
+### `do-while` Loop
+
+useful for running code at least **once**
+
+> [!NOTE]
+> I never use it in competitions.
+
+`Python`:
+
+doesn't have a built-in `do-while` loop
+
+`C++`:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main(){
+        int i = 0;
+        do{
+            cout << i++ << endl;
+        }while(i < 5);
+        return 0;
+    }
+```
+
+### `continue` vs `break`
+
+|  keyword   |       description        |
+| :--------: | :----------------------: |
+| `continue` |  skip current iteration  |
+|  `break`   | stop the loop completely |
+
+`Python`:
+
+```python
+    print("odd numbers in [0, 5]")
+    for i in range(6):
+        if i % 2 == 0:
+            continue
+        print(i)
+
+    print("1 - 3:")
+    for i in range(1, 5):
+        if i > 3:
+            break
+        print(i)
+```
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main(){
+        cout << "odd numbers in [0, 5]" << endl;
+        for(int i = 0; i < 6; i++){
+            if(i % 2 == 0){//or !(i % 2), but not recommended
+                continue;
+            }
+            cout << i << endl;
+        }
+
+        cout << "1 - 3:";
+        for(int i = 0; i < 5; i++){
+            if(i > 3){
+                break;
+            }
+            cout << i << endl;
+        }
+        return 0;
+    }
+```
+
+---
+
+## Arithmetic Operators
+
+used for mathematical calculations
+
+| operator |      meaning       |      `Python`       |  `C++`  |
+| :------: | :----------------: | :-----------------: | :-----: |
+|   `+`    |      addition      |       `a + b`       | `a + b` |
+|   `-`    |    subtraction     |       `a - b`       | `a - b` |
+|   `*`    |   multiplication   |       `a * b`       | `a * b` |
+|   `/`    |      devision      | `a // b` or `a / b` | `a / b` |
+|   `%`    | modulo (remainder) |       `a % b`       | `a % b` |
+
+---
+
+## Assignment Operators
+
+shorter way to update variables
+
+| operator |      meaning       | `Pytho`  |  `C++`   |
+| :------: | :----------------: | :------: | :------: |
+|   `+=`   |   add and assign   | `a += 3` | `a += 3` |
+|   `-=`   | sutract and assign | `a -= 3` | `a -= 3` |
+|   `*=`   | mutiply and assign | `a *= 3` | `a *= 3` |
+|   `/=`   |  divie and assign  | `a /= 3` | `a /= 3` |
+|   `%=`   | modulo and assign  | `a %= 3` | `a %= 3` |
+
+---
+
+## Increment and Decrement Operators
+
+`Python` doesn't have these operators
+
+|        operator         |       meaning       | `C++` |
+| :---------------------: | :-----------------: | :---: |
+| `++` (`pre-increment`)  | calculate **first** | `++a` |
+| `++` (`post-increment`) | calculate **later** | `a++` |
+| `--` (`pre-decrement`)  | calculate **first** | `--a` |
+| `--` (`post-decrement`) | calculate **later** | `a--` |
